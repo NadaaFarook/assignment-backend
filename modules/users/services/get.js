@@ -1,7 +1,4 @@
 const usersModel = require("../model");
-const mongoose = require("mongoose");
-const jwt = require("jsonwebtoken");
-const parseCookie = require("../../../middlewares/parseCookie");
 async function getUser(req) {
   try {
     const user = await usersModel.findOne({ email: req.email });

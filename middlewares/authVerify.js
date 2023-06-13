@@ -5,7 +5,7 @@ async function authVerify(req, res, next) {
 
   const token = req.header("x-auth-token");
   const email = req.header("x-auth-email");
-
+  console.log(token, email, "token");
   //Check if no token
   if (!token) {
     return res

@@ -39,8 +39,9 @@ async function saveUser(req) {
       // register
       const user = new usersModel({
         ...req.body,
-        bookmarks: [],
         tokens: [sessionToken],
+        imagesUploads: [],
+        layers: [],
       });
       const newUser = await user.save();
       return {

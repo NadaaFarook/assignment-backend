@@ -8,16 +8,15 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 const { ORIGIN } = process.env;
 var corsOptions = {
-  credentials: true,
-  origin: ORIGIN
+  origin: ORIGIN,
 };
 
-app.use(cors(corsOptions));
+app.use(cors());
 
 const users = require("./modules/users/router");
 require("./config/database").connect();
 
-app.use("/api/v1/users", users);
+app.use("/api/users", users);
 
 app.get("/api", (req, res) => {
   res.send("Api Working!!");
